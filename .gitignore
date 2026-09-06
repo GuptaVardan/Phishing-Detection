@@ -1,2 +1,9 @@
 venv
 .env
+__pycache__/
+*.pyc
+Artifacts/
+logs/
+prediction_output/
+final_model/
+.vscode
