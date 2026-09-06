@@ -1,29 +1,39 @@
-### Network Security Projects For Phising Data
+# Phishing Detection
 
-Setup github secrets:
-AWS_ACCESS_KEY_ID=
+Machine-learning pipeline for detecting phishing-related network activity.
 
-AWS_SECRET_ACCESS_KEY=
+## Project Overview
 
-AWS_REGION = us-east-1
+The project includes data ingestion, validation, transformation, model training,
+evaluation, and prediction components. A Flask application exposes the trained
+model for predictions, and Docker support is included for deployment.
 
-AWS_ECR_LOGIN_URI = 788614365622.dkr.ecr.us-east-1.amazonaws.com/networkssecurity
-ECR_REPOSITORY_NAME = networkssecurity
+## Local Setup
 
+Create and activate a virtual environment, then install the dependencies:
 
-Docker Setup In EC2 commands to be Executed
-#optinal
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
 
-sudo apt-get update -y
+On Windows PowerShell, activate the environment with:
 
-sudo apt-get upgrade
+```powershell
+venv\Scripts\Activate.ps1
+```
 
-#required
+Run the application with:
 
-curl -fsSL https://get.docker.com -o get-docker.sh
+```bash
+python app.py
+```
+## Docker
 
-sudo sh get-docker.sh
+Build and run the container locally:
 
-sudo usermod -aG docker ubuntu
-
-newgrp docker
+```bash
+docker build -t network-security .
+docker run -p 8080:8080 network-security
+```
